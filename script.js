@@ -43,20 +43,46 @@ async function newQuote() {
 
 
                 newQuoteBtn.addEventListener('click', newQuote);
+
+
+
+                const shareData = {
+                    title: `${nome}`,
+                    text: `${verso}`,
+                    url: `versiculododia.vercel.app`,
+                }
+                const btn = document.querySelector('button');
+                const resultPara = document.querySelector('.result');
+
+                // Deve ser acionado algum tipo de "ativação do usuário"
+                btn.addEventListener('click', async () => {
+                    try {
+                        await navigator.share(shareData)
+                    } catch (err) {
+                        resultPara.textContent = 'Error: ' + e
+                    }
+                    resultPara.textContent = 'MDN compartilhado com sucesso!'
+                });
+
             })
         }).catch((err) => alert("Epa!, Algo deu errado: " + err));
 
 }
 
-function tweet() {
+// function tweet() {
 
-    const tweetUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}${authorText.textContent}`;
-    window.open(tweetUrl, '_blank');
-}
+//     const tweetUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}${authorText.textContent}`;
+//     window.open(tweetUrl, '_blank');
+// }
 
-twitterBtn.addEventListener('click', tweet);
+// twitterBtn.addEventListener('click', tweet);
 
 newQuote()
+
+
+
+
+
 
 
 
