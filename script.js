@@ -66,7 +66,7 @@ newQuote()
 const whatsappBtn = document.getElementById('whats');
 
 function whatsapp() {
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${quoteText.textContent}\n\n${authorText.textContent}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${quoteText.textContent}\n\n\n\n${authorText.textContent}\n\n\n\nhttps://versiculododia.vercel.app/ `;
     window.open(whatsappUrl, '_blank');
 }
 
