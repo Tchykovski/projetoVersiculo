@@ -47,21 +47,18 @@ async function newQuote() {
 
 
                 const shareData = {
-                    title: `${nome}`,
-                    text: `${verso} \n ${nome}`,
-                    url: `Veja mais em: https://versiculododia.vercel.app/`,
+                    text: `${verso} \n\n ${nome} \n\n https://versiculododia.vercel.app`,
                 }
                 const btn = document.querySelector('button');
-                const resultPara = document.querySelector('.result');
 
                 // Deve ser acionado algum tipo de "ativação do usuário"
                 btn.addEventListener('click', async () => {
                     try {
                         await navigator.share(shareData)
                     } catch (err) {
-                        resultPara.textContent = 'Error: ' + e
+                        console.log(err)
                     }
-                    resultPara.textContent = 'MDN compartilhado com sucesso!'
+                    console.log('MDN compartilhado com sucesso!')
                 });
 
             })
