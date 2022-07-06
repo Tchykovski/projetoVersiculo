@@ -87,6 +87,16 @@ button:active {
     font-size: 1.5rem;
 }
 
+
+.whats-button:hover {
+    color: #25D366;
+}
+
+.fa-whatsapp {
+    font-size: 1.5rem;
+}
+
+
 footer {
     position: fixed;
     left: 0;

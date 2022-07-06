@@ -46,20 +46,7 @@ async function newQuote() {
 
 
 
-                const shareData = {
-                    text: `${verso} \n\n ${nome} \n\n https://versiculododia.vercel.app`,
-                }
-                const btn = document.querySelector('button');
 
-                // Deve ser acionado algum tipo de "ativação do usuário"
-                btn.addEventListener('click', async () => {
-                    try {
-                        await navigator.share(shareData)
-                    } catch (err) {
-                        console.log(err)
-                    }
-                    console.log('MDN compartilhado com sucesso!')
-                });
 
             })
         }).catch((err) => alert("Epa!, Algo deu errado: " + err));
@@ -76,8 +63,14 @@ async function newQuote() {
 
 newQuote()
 
+const whatsappBtn = document.getElementById('whats');
 
+function whatsapp() {
+    const whatsappUrl = `https://api.whatsapp.com/share?text=${quoteText.textContent}${authorText.textContent}`;
+    window.open(whatsappUrl, '_blank');
+}
 
+whatsappBtn.addEventListener('click', whatsapp);
 
 
 
