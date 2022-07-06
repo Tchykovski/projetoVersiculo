@@ -48,8 +48,8 @@ async function newQuote() {
 
                 const shareData = {
                     title: `${nome}`,
-                    text: `${verso}`,
-                    url: `versiculododia.vercel.app`,
+                    text: `${verso} \n ${nome}`,
+                    url: `Veja mais em: https://versiculododia.vercel.app/`,
                 }
                 const btn = document.querySelector('button');
                 const resultPara = document.querySelector('.result');
