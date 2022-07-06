@@ -1,7 +1,6 @@
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
-const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 
 
@@ -53,20 +52,12 @@ async function newQuote() {
 
 }
 
-// function tweet() {
-
-//     const tweetUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}${authorText.textContent}`;
-//     window.open(tweetUrl, '_blank');
-// }
-
-// twitterBtn.addEventListener('click', tweet);
-
 newQuote()
 
 const whatsappBtn = document.getElementById('whats');
 
 function whatsapp() {
-    const whatsappUrl = `https://api.whatsapp.com/send?text="${quoteText.textContent}\n\n\n\n\n\n${authorText.textContent} \n\n\n\n\n\n https://versiculododia.vercel.app/" `;
+    const whatsappUrl = "https://api.whatsapp.com/send?text=" + quoteText.textContent + authorText.textContent;
     window.open(whatsappUrl, '_blank');
 }
 
