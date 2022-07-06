@@ -57,7 +57,7 @@ newQuote()
 const whatsappBtn = document.getElementById('whats');
 
 function whatsapp() {
-    const whatsappUrl = "https://api.whatsapp.com/send?text=" + quoteText.textContent + authorText.textContent;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${quoteText.textContent} ${authorText.textContent}`
     window.open(whatsappUrl, '_blank');
 }
 
